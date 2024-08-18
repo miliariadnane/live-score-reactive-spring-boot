@@ -1,4 +1,4 @@
-package com.example.application.services;
+package dev.nano.livescore.services;
 
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.vaadin.hilla.BrowserCallable;

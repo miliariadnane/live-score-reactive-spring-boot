@@ -1,4 +1,4 @@
 @NonNullApi
-package com.example.application.services;
+package dev.nano.livescore.services;
 
 import org.springframework.lang.NonNullApi;

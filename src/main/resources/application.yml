@@ -1,0 +1,18 @@
+server:
+  port: ${PORT:8080}
+logging:
+  level:
+    org:
+      atmosphere: warn
+spring:
+  mustache:
+    check-template-location: false
+  jpa:
+  defer-datasource-initialization: true
+
+# Launch the default browser when starting the application in development mode
+vaadin:
+  launch-browser: true
+# To improve the performance during development.
+# For more information https://vaadin.com/docs/latest/integrations/spring/configuration#special-configuration-parameters
+  allowed-packages: com.vaadin,org.vaadin,com.example.application
