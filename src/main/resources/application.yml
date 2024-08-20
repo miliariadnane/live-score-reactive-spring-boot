@@ -4,7 +4,17 @@ logging:
   level:
     org:
       atmosphere: warn
+    org.springframework.r2dbc: DEBUG
+
 spring:
+  r2dbc:
+    url: r2dbc:h2:mem:///livescore?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
   mustache:
     check-template-location: false
   jpa:
@@ -16,3 +26,8 @@ vaadin:
 # To improve the performance during development.
 # For more information https://vaadin.com/docs/latest/integrations/spring/configuration#special-configuration-parameters
   allowed-packages: com.vaadin,org.vaadin,com.example.application
+
+football-api:
+  base-url: https://api-football-v1.p.rapidapi.com/v3
+  api-key: 4561259693msh2d3494c611665aep123f3cjsnf31d89cc16e6
+  host: api-football-v1.p.rapidapi.com
