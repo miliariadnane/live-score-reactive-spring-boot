@@ -29,5 +29,5 @@ vaadin:
 
 football-api:
   base-url: https://api-football-v1.p.rapidapi.com/v3
-  api-key: 4561259693msh2d3494c611665aep123f3cjsnf31d89cc16e6
+  api-key: ${FOOTBALL_API_KEY}
   host: api-football-v1.p.rapidapi.com

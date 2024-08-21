@@ -1,51 +1,111 @@
-# Custom project from Hilla
+# 🏆 Live Score App with Reactive Spring Boot 🏆
 
-This project can be used as a starting point to create your own Hilla application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+## Table of Contents
 
-## Running the application
+1. [Introduction](#introduction) 
+2. [Project Goals](#project-goals) 
+3. [Reactive Programming with Spring Boot](#reactive-programming-with-spring-boot) 
+    - [What is Reactive Programming?](#what-is-reactive-programming) 
+    - [Why Use Reactive Programming?](#why-use-reactive-programming) 
+    - [How Spring Boot Implements Reactive Programming](#how-spring-boot-implements-reactive-programming) 
+4. [How It Works](#how-it-works) 
+5. [Technologies Used](#technologies-used) 
+6. [Getting Started](#getting-started) 
+7. [App Screenshots](#app-screenshots) 
+8. [Support](#support) 
+9. [License](#license) 
 
-The project is a standard Maven project. To run it from the command line,
-type `mvnw` (Windows), or `./mvnw` (Mac & Linux), then open
-http://localhost:8080 in your browser.
+## Introduction
 
-You can also import the project to your IDE of choice as you would with any
-Maven project.
+> Live Score App, an application that delivers real-time sports scores using reactive programming principles. This project showcases the power of Spring Boot's reactive 🍃 capabilities combined with a modern frontend with Vaadin's Hilla ⚛️ project.
 
-## Deploying to Production
+💡 This application is not business oriented and my focus is mostly on technical part, I just want to implement a sample app that uses reactive programming with Spring Boot to put in practice what I have learned.
 
-To create a production build, call `mvnw clean package -Pproduction` (Windows),
-or `./mvnw clean package -Pproduction` (Mac & Linux).
-This will build a JAR file with all the dependencies and front-end resources,
-ready to be deployed. The file can be found in the `target` folder after the build completes.
+🌀 This Application is in-progress and I will add some improvements and features over time 🌀
 
-Once the JAR file is built, you can run it using
-`java -jar target/myapp-1.0-SNAPSHOT.jar` (NOTE, replace
-`myapp-1.0-SNAPSHOT.jar` with the name of your jar).
+## Project Goals
 
-## Project structure
+The primary objectives of this project are:
 
-<table style="width:100%; text-align: left;">
-  <tr><th>Directory</th><th>Description</th></tr>
-  <tr><td><code>src/main/frontend/</code></td><td>Client-side source directory</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>index.html</code></td><td>HTML template</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>index.ts</code></td><td>Frontend 
-entrypoint, bootstraps a React application</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>routes.tsx</code></td><td>React Router routes definition</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>MainLayout.tsx</code></td><td>Main 
-layout component, contains the navigation menu, uses <a href="https://hilla.dev/docs/react/components/app-layout">
-App Layout</a></td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>views/</code></td><td>UI view 
-components</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>themes/</code></td><td>Custom  
-CSS styles</td></tr>
-  <tr><td><code>src/main/java/&lt;groupId&gt;/</code></td><td>Server-side 
-source directory, contains the server-side Java views</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>Application.java</code></td><td>Server entry-point</td></tr>
-</table>
+1. To demonstrate the implementation of reactive programming in a real-world application.
+2. To create a user-friendly interface for accessing live sports scores.
+3. To serve as an educational resource for developers interested in reactive programming with Spring Boot.
 
-## Useful links
+## Reactive Programming with Spring Boot
 
-- Read the documentation at [hilla.dev/docs](https://hilla.dev/docs/).
-- Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/hilla) or join our [Discord channel](https://discord.gg/MYFq5RTbBn).
-- Report issues, create pull requests in [GitHub](https://github.com/vaadin/hilla).
+### What is Reactive Programming?
+
+Reactive programming is a paradigm focused on building asynchronous, non-blocking, and event-driven applications that can scale effectively. It's particularly well-suited for applications that deal with streams of data or require high concurrency.
+
+Key concepts in reactive programming include:
+- 🔄 Asynchronous data streams
+- 🚫 Non-blocking operations
+- 🧮 Functional-style programming
+
+### Why Use Reactive Programming?
+
+Reactive programming offers several advantages:
+
+1. **Improved Scalability**: Reactive applications can handle more concurrent users with less hardware.
+2. **Enhanced Responsiveness**: Non-blocking operations ensure that the application remains responsive under high load.
+3. **Resilience**: Built-in error handling and recovery mechanisms make reactive systems more robust.
+4. **Resource Efficiency**: Reactive systems can do more with less, optimizing CPU and memory usage.
+
+### How Spring Boot Implements Reactive Programming
+
+Spring Boot leverages the Project Reactor library to implement reactive programming. Key components include:
+
+- **WebFlux**: Spring's reactive-stack web framework, an alternative to Spring MVC.
+- **Reactive Streams**: A specification for asynchronous stream processing with non-blocking backpressure.
+- **Reactor Core**: Provides reactive types like Mono (for 0 or 1 element) and Flux (for 0 to N elements).
+
+In Live Score App, we use these technologies to create a reactive pipeline from the data source to the client, ensuring efficient and scalable real-time updates.
+
+## How It Works
+
+1. **Data Fetching**: The application periodically fetches live score data from an external API [API-FOOTBALL](https://api-football-v1.p.rapidapi.com) from RapidAPI using WebClient, a non-blocking HTTP client.
+2. **Data Processing**: Incoming data is processed reactively using Flux and Mono operators.
+5. **Frontend Integration**: The frontend, built with React and TypeScript, consumes the reactive API and updates the UI in real-time.
+
+## Technologies Used
+
+- Backend:
+    - Spring Boot 3.3.2 🍃
+    - Spring WebFlux 🌊
+    - Project Reactor ⚛️
+    - Java 21 ☕
+- Frontend:
+    - React ⚛️
+    - TypeScript 📘
+    - Tailwind CSS 🎨
+- External APIs:
+    - [API-FOOTBALL](https://api-football-v1.p.rapidapi.com) from RapidAPI 🏟️
+- Build Tool: Maven 🛠️
+
+## Getting Started
+
+To run the application locally, follow these steps:
+
+1. Clone the repository from GitHub: `git clone https://github.com/miliariadnane/live-score-reactive-spring-boot.git`
+2. Navigate to the project directory: `cd live-score-reactive-spring-boot`
+3. Open the project in your favorite IDE.
+4. Open `application.yml` and add your API key for API-FOOTBALL from RapidAPI.
+5. Run `mvn clean install` to build the project.
+6. Run the `LiveScoreApplication` class to start the Spring Boot application.
+7. Open your browser and navigate to `http://localhost:8080` to view the app.
+
+
+## App Screenshots
+
+![App Screenshot](docs/screenshot.png)
+
+## Support
+
+- ⭐️️ Star this repository if you find it useful.
+- 🐛️ If you find a bug, raise an issue or fix it and send a pull request.
+- 📢️ If you have any feature requests, raise an issue or send a pull request.
+- 🤲 If you have a moment, don't forget to make a duaa for me and my parents.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.

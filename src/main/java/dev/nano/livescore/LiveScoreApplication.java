@@ -20,10 +20,10 @@ import java.time.Duration;
  */
 @SpringBootApplication
 @Theme(value = "live-score")
-public class Application implements AppShellConfigurator {
+public class LiveScoreApplication implements AppShellConfigurator {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(LiveScoreApplication.class, args);
     }
 
     @Bean
