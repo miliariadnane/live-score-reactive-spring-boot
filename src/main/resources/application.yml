@@ -4,21 +4,10 @@ logging:
   level:
     org:
       atmosphere: warn
-    org.springframework.r2dbc: DEBUG
 
 spring:
-  r2dbc:
-    url: r2dbc:h2:mem:///livescore?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    username: sa
-    password:
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
   mustache:
     check-template-location: false
-  jpa:
-  defer-datasource-initialization: true
 
 # Launch the default browser when starting the application in development mode
 vaadin:
