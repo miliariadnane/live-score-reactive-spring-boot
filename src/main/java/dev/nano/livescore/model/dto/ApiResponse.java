@@ -6,23 +6,7 @@ import java.util.List;
 
 @Data
 public class ApiResponse {
-    private String get;
-    private Parameters parameters;
-    private List<Object> errors;
-    private int results;
-    private Paging paging;
     private List<FixtureResponse> response;
-
-    @Data
-    public static class Parameters {
-        private String live;
-    }
-
-    @Data
-    public static class Paging {
-        private int current;
-        private int total;
-    }
 
     @Data
     public static class FixtureResponse {
@@ -30,20 +14,39 @@ public class ApiResponse {
         private League league;
         private Teams teams;
         private Goals goals;
+        private Score score;
     }
 
     @Data
     public static class Fixture {
         private long id;
+        private String referee;
+        private String timezone;
         private String date;
+        private long timestamp;
+        private Periods periods;
+        private Venue venue;
         private Status status;
+    }
+
+    @Data
+    public static class Periods {
+        private Integer first;
+        private Integer second;
+    }
+
+    @Data
+    public static class Venue {
+        private Integer id;
+        private String name;
+        private String city;
     }
 
     @Data
     public static class Status {
         private String long_;
         private String short_;
-        private int elapsed;
+        private Integer elapsed;
     }
 
     @Data
@@ -68,11 +71,20 @@ public class ApiResponse {
         private int id;
         private String name;
         private String logo;
+        private Boolean winner;
     }
 
     @Data
     public static class Goals {
         private Integer home;
         private Integer away;
+    }
+
+    @Data
+    public static class Score {
+        private Goals halftime;
+        private Goals fulltime;
+        private Goals extratime;
+        private Goals penalty;
     }
 }

@@ -21,6 +21,7 @@ public class WebClientConfig {
 
     @Bean
     public WebClient footballApiClient() {
+
         // log.info("Configuring WebClient with base URL: {}", baseUrl);
         // log.info("Using host: {}", host);
         // log.info("API Key configured: {}", apiKey.substring(0, 5) + "...");
@@ -29,9 +30,12 @@ public class WebClientConfig {
                 .baseUrl(baseUrl)
                 .defaultHeader("X-RapidAPI-Key", apiKey)
                 .defaultHeader("X-RapidAPI-Host", host)
+                .codecs(configurer -> configurer
+                        .defaultCodecs()
+                        .maxInMemorySize(16 * 1024 * 1024)) // Set buffer size to 16MB
                 .filter((request, next) -> {
-                    // log.debug("Making request to: {}", request.url());
-                    // log.debug("Headers: {}", request.headers());
+                    log.debug("Making request to: {}", request.url());
+                    log.debug("Headers: {}", request.headers());
                     return next.exchange(request);
                 })
                 .build();
