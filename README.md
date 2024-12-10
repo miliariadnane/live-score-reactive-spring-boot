@@ -97,7 +97,14 @@ To run the application locally, follow these steps:
 
 ## App Screenshots
 
-![App Screenshot](docs/screenshot.png)
+- Match List
+  ![Match List](docs/screenshots/match-list.jpeg)
+
+- League List
+  ![League List](docs/screenshots/league-list.jpeg)
+
+- Match Details (buggy)
+  ![Match Details](docs/screenshots/match-details.jpeg)
 
 ## Support
 
